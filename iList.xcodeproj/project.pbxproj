@@ -16,6 +16,7 @@
 		2C1091D02A229F38005B9C00 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1091CF2A229F38005B9C00 /* ListView.swift */; };
 		2C1091D22A22A01F005B9C00 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1091D12A22A01F005B9C00 /* ListItemView.swift */; };
 		2C1091D42A22A108005B9C00 /* ItemInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1091D32A22A108005B9C00 /* ItemInputView.swift */; };
+		2C1091D62A22AB00005B9C00 /* CompletedListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1091D52A22AB00005B9C00 /* CompletedListItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		2C1091CF2A229F38005B9C00 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		2C1091D12A22A01F005B9C00 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		2C1091D32A22A108005B9C00 /* ItemInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInputView.swift; sourceTree = "<group>"; };
+		2C1091D52A22AB00005B9C00 /* CompletedListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedListItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				2C1091C22A229EEF005B9C00 /* Preview Content */,
 				2C1091CF2A229F38005B9C00 /* ListView.swift */,
 				2C1091D12A22A01F005B9C00 /* ListItemView.swift */,
+				2C1091D52A22AB00005B9C00 /* CompletedListItemView.swift */,
 			);
 			path = iList;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C1091C62A229EEF005B9C00 /* Persistence.swift in Sources */,
+				2C1091D62A22AB00005B9C00 /* CompletedListItemView.swift in Sources */,
 				2C1091D42A22A108005B9C00 /* ItemInputView.swift in Sources */,
 				2C1091BF2A229EEF005B9C00 /* ContentView.swift in Sources */,
 				2C1091D02A229F38005B9C00 /* ListView.swift in Sources */,

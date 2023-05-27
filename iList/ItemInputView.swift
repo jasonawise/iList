@@ -22,11 +22,13 @@ struct CustomTextFieldStyle: TextFieldStyle {
 struct ItemInputView: View {
   @Environment(\.managedObjectContext) private var viewContext
   
-  @State private var item: String = ""
+  @State private var _item: String = ""
+  @State private var showErrorAlert = false
+  @State private var errorMessage = "Can not be blank"
   var body: some View {
     
     ZStack(alignment: .trailing) {
-      TextField("Add to list", text: $item)
+      TextField("Add to list", text: $_item)
         .textFieldStyle(CustomTextFieldStyle())
         .padding()
       HStack {
@@ -34,7 +36,7 @@ struct ItemInputView: View {
         Button(action: {
           // Perform action when the button is tapped
           // For example, you can clear the text field
-          addItem(item: item)
+          addItem(item: _item)
         }) {
           Image(systemName: "plus.app")
             .foregroundColor(.gray)
@@ -44,16 +46,28 @@ struct ItemInputView: View {
         }
       }
     }
+    .alert(isPresented: $showErrorAlert) {
+      Alert(
+        title: Text("Error"),
+        message: Text(errorMessage),
+        dismissButton: .default(Text("OK"))
+      )
+    }
     
   }
   
   private func addItem(item: String) {
     withAnimation {
-      let newItem = Item(context: viewContext)
-      newItem.name = item
+      if (item.trimmingCharacters(in: .whitespacesAndNewlines) != "") {
+        let newItem = Item(context: viewContext)
+        newItem.name = item
+      } else {
+        showErrorAlert = true
+      }
       
       do {
         try viewContext.save()
+        _item = ""
       } catch {
         // Replace this implementation with code to handle the error appropriately.
         // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
