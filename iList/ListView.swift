@@ -16,15 +16,21 @@ struct ListView: View {
 
   var body: some View {
     NavigationView {
-      VStack {
-        List {
-          ForEach(items, id: \.self) { item in
-            if (!item.completed) {ListItemView(listItem: item)}
+      List {
+        ForEach(items, id: \.self) { item in
+          if !item.completed { ListItemView(listItem: item) }
+        }
+        CompletedListItemView()
+        
+      }.navigationTitle("List")
+        .toolbar {
+          ToolbarItem(placement: .navigationBarTrailing) {
+            HStack {
+              Image(systemName: "gear")
+            }
           }
         }
-      }
     }
-    .navigationTitle("List")
   }
 }
 

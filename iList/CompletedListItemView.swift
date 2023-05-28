@@ -16,17 +16,14 @@ struct CompletedListItemView: View {
   private var items: FetchedResults<Item>
 
   var body: some View {
-    VStack {
-      List {
-        Section(header: Text("Completed")) {
-          ForEach(items, id: \.self) { item in
-            if (item.completed) {Text(item.name ?? "")}
-          }
+      Section(header: Text("Completed")) {
+        ForEach(items, id: \.self) { item in
+          if item.completed { Text(item.name ?? "")
+            .foregroundColor(Color.gray) }
         }
       }
     }
   }
-}
 
 struct CompletedListItemView_Previews: PreviewProvider {
   static var previews: some View {

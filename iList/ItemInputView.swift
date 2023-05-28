@@ -34,8 +34,6 @@ struct ItemInputView: View {
       HStack {
         Spacer()
         Button(action: {
-          // Perform action when the button is tapped
-          // For example, you can clear the text field
           addItem(item: _item)
         }) {
           Image(systemName: "plus.app")
